@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import Link from 'next/link'
 //import styles from './page.module.css'
+import food0 from '/public/food0.png'
 
 export default function List() {
 
@@ -12,8 +13,10 @@ export default function List() {
         {
             products.map((a,i)=>{
                 return (
-                    <div className="food">
-                        <h4>{products[i]} $1000</h4>
+                    <div className="food" key={i}>
+                        <img src={`/food${i}.png`} className="food-img"/>
+                        {/* <Image src={food0} className="food-img"/> */}
+                        <h4>{a} $1000</h4>
                     </div>
                 )
             })
